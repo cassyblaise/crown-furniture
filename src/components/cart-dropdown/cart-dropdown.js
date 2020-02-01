@@ -8,10 +8,9 @@ import './cart-dropdown.styles.scss';
 
 const CartDropdown = ({ cartItems }) => (
     <div className='cart-dropdown'>
-        <div className="cart-item"> 
-         {
-            cartItems.map(cartItems => ( 
-            <CartItem key={cartItem.id} item={cartItem} /> 
+        <div className="cart-items"> 
+         {cartItems.map(cartItem => ( 
+          <CartItem key={cartItem.id} item={cartItem} /> 
             
         ))}
         </div>
@@ -20,8 +19,8 @@ const CartDropdown = ({ cartItems }) => (
 
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-    cart-item
+const mapStateToProps = ({ cart: { cartItems }}) => ({
+    cartItems
 })
 
 export default connect(mapStateToProps) (CartDropdown);
